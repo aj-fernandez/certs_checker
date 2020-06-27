@@ -2,7 +2,9 @@ epoch_day=86400
 alert_days=7
 epoch_warning=$(($(date +%s) + (alert_days*epoch_day)))
 now_epoch=$(date +%s)
+# Slack notification header
 tittle="CERTS CHECKER"
+# Slack channel
 channel="#productions_notifications"
 # Slack webhook
 webhook=""
