@@ -17,6 +17,8 @@ expiration_harvesting() {
         check_send
     done <"./sites_list"
 }
+
+
 check_send() {
     if [ $epoch_warning -gt $expire_epoch ]; then
                 alert="The $site  site TLS certificate expiration date is 7 days or less"
@@ -24,5 +26,7 @@ check_send() {
                 curl -s -m 10 --data-urlencode "${payload}" $webhook > /dev/null
     fi
 }
+
+
 
 expiration_harvesting
